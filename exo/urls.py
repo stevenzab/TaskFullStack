@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from bridge import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('bridge/', views.bridge_list),
 ]
