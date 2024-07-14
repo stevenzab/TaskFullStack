@@ -30,6 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+GDAL_LIBRARY_PATH = 'C:\\Users\\Steven\\anaconda3\\envs\\exo\\Library\\bin\\gdal.dll'
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django.contrib.gis',
     'bridge',
 ]
 

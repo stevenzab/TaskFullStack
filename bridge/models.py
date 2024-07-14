@@ -1,8 +1,8 @@
-from django.db import models
+from django.contrib.gis.db import models
 
 class Bridge(models.Model):
     name = models.CharField(max_length=100)
-    location = models.Field()
+    location = models.PointField()
     inspection_date = models.DateField()
     status = models.CharField(max_length=50)
     traffic_load = models.IntegerField()
