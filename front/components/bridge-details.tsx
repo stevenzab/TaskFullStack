@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Cross from '../assets/cross.svg'
 import Image from 'next/image';
-import BridgeForm from './bridge-form';
+import BridgeForm from './bridge-form-update';
 
 interface RouterQuery {
   id: number
