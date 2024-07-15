@@ -1,11 +1,5 @@
 import Link from 'next/link'
 import React, { useState } from 'react';
-// import Ai from '../assets/ai.svg';
-// import PREMIUM from '../assets/premium.svg'
-// import ABOUT from '../assets/about.svg'
-// import CONTACT from '../assets/contact.svg'
-// import FAQ from '../assets/faq.svg'
-// import HOME from '../assets/home.svg'
 
 /**
  * NavBar Component
@@ -81,6 +75,11 @@ export default function NavBar() {
 							<li className="mx-4 my-6 md:my-0">
 								<Link href="/create-bridge" className="md:text-xl text-sm hover:text-cyan-500 duration-500 text-white flex items-center" onClick={() => setOpen(false)}>
 									Create a Bridge
+								</Link>
+							</li>
+							<li className="mx-4 my-6 md:my-0">
+								<Link href="/chart" className="md:text-xl text-sm hover:text-cyan-500 duration-500 text-white flex items-center" onClick={() => setOpen(false)}>
+									Pie Chart
 								</Link>
 							</li>
 						</ul>

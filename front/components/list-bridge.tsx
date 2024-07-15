@@ -50,7 +50,7 @@ export default function ListBridge() {
 											Traffic Load: {bridge.traffic_load}
 										</div>
 										<div className="mt-1 text-gray-700">
-											Location: {bridge.location}
+											Location:  {bridge.location}
 										</div>
 								</div>
 								</Link>
