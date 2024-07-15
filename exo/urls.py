@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('bridge/', views.bridge_list),
     path('bridge/<int:id>', views.bridge_details),
-    path('update/<int:id>', views.update_bridge),
-    path('create/', views.create_bridge),
-    path('delete/<int:id>', views.delete_bridge)
+    path('bridge/update/<int:id>', views.update_bridge),
+    path('bridge/create/', views.create_bridge),
+    path('bridge/delete/<int:id>', views.delete_bridge)
 ]
