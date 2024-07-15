@@ -1,28 +1,5 @@
 import * as React from "react"
-import Image from 'next/image';
 import Link from 'next/link';
-
-
-/**
- * Footer Component
- *
- * This is a React component named `Footer` that represents the footer section of a web page.
- *
- * @component Footer
- * @returns {JSX.Element} The rendered Footer component.
- * @example
- *
- * import React from 'react';
- * import Footer from './Footer';
- *
- * const Example: React.FC = () => {
- *   return (
- *     <Footer />
- *   );
- * };
- *
- * export default Example;
- */
 
 export default function Footer() {
 	return (
@@ -47,13 +24,7 @@ export default function Footer() {
 								<Link href="/">Accueil</Link>
 							</li>
 							<li>
-								<Link href="/premium-page">Premium</Link>
-							</li>
-							<li>
-								<Link href="/ia-page">IA</Link>
-							</li>
-							<li>
-								<Link href="/faq">FAQ</Link>
+								<Link href="/premium-page">Crée un pont</Link>
 							</li>
 						</ul>
 					</div>
