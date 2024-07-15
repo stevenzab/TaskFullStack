@@ -38,17 +38,6 @@ export default function NavBar() {
 			<div className="sticky top-0 z-10">
 				<div className='md:flex md:flex-row w-full md:items-center md:justify-between p-4' style={{ backgroundColor: '#6CC5A2' }}>
 					<div className="md:flex items-center">
-						{/* <span className="text-2xl cursor-pointer relative md:left-8">
-							<Link href="/">
-								<Image
-									src={LogoImage}
-									alt="logo"
-									width={55}
-									height={55}
-								/>
-							</Link>
-						</span> */}
-
 						{!open && (
 							<button onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
 								<svg
@@ -64,7 +53,6 @@ export default function NavBar() {
 								</svg>
 							</button>
 						)}
-
 						{open && (
 							<button
 								className="md:text-3xl absolute right-8 top-6 cursor-pointer md:hidden mr-5"
@@ -87,68 +75,12 @@ export default function NavBar() {
 						<ul className='md:flex md:flex-row font-semibold'>
 							<li className="mx-4 my-6 md:my-0">
 								<Link href="/" className="md:text-xl hover:text-cyan-500 duration-500 text-white flex iems-center" onClick={() => setOpen(false)}>
-									{/* <Image
-										src={HOME}
-										alt="IA"
-										width={30}
-										className='mr-2 md:hidden'
-									/> */}
 									Accueil
 								</Link>
 							</li>
 							<li className="mx-4 my-6 md:my-0">
-								<Link href="/bridge" className="md:text-xl sm:text-sm text-md hover:text-cyan-500 duration-500 text-white flex items-center" onClick={() => setOpen(false)}>
-									{/* <Image
-										src={PREMIUM}
-										alt="IA"
-										width={30}
-										className='mr-2 md:hidden'
-									/> */}
-									Bridge list
-								</Link>
-							</li>
-							<li className="mx-4 my-6 md:my-0">
 								<Link href="/create-bridge" className="md:text-xl text-sm hover:text-cyan-500 duration-500 text-white flex items-center" onClick={() => setOpen(false)}>
-									{/* <Image
-										src={ABOUT}
-										alt="IA"
-										width={30}
-										className='mr-2 md:hidden'
-									/> */}
 									Create a Bridge
-								</Link>
-							</li>
-							<li className="mx-4 my-6 md:my-0">
-								<Link href="/contact-page" className="md:text-xl text-sm hover:text-cyan-500 duration-500 text-white flex items-center" onClick={() => setOpen(false)}>
-									{/* <Image
-										src={CONTACT}
-										alt="IA"
-										width={30}
-										className='mr-2 md:hidden'
-									/> */}
-									Contact
-								</Link>
-							</li>
-							<li className="mx-4 my-6 md:my-0 flex">
-								<Link href="/ia-page" className="md:text-xl text-sm hover:text-cyan-500 duration-500 text-white flex items-center" onClick={() => setOpen(false)}>
-									{/* <Image
-										src={Ai}
-										alt="IA"
-										width={30}
-										className='mr-2 md:hidden'
-									/> */}
-									IA
-								</Link>
-							</li>
-							<li className="mx-4 my-6 md:my-0">
-								<Link href="/faq" className="md:text-xl text-sm hover:text-cyan-500 duration-500 text-white flex items-center" onClick={() => setOpen(false)}>
-									{/* <Image
-										src={FAQ}
-										alt="IA"
-										width={30}
-										className='mr-2 md:hidden'
-									/> */}
-									FAQ
 								</Link>
 							</li>
 						</ul>
