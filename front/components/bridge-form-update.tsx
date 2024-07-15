@@ -41,7 +41,6 @@ const BridgeForm = ({ id }: BridgeFormProps) => {
           });
     
           if (response.status === 200) {
-            alert('Bridge updated successfully');
             router.push('/');
           } else if (response.status === 400) {
             const errorData = await response.json();
