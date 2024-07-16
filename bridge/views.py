@@ -5,6 +5,7 @@ from .serializer import BridgeSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from django.contrib.gis.db.models.functions import AsGeoJSON
 
 #get all the bridge
 #serialize them
@@ -12,8 +13,8 @@ from rest_framework import status
 
 @api_view(["GET"])
 def bridge_list(request):
-    bridge = Bridges.objects.all()
-    serializer = BridgeSerializer(bridge, many=True)
+    bridges = Bridges.objects.annotate(location_json=AsGeoJSON('location'))
+    serializer = BridgeSerializer(bridges, many=True)
     return JsonResponse({'bridge': serializer.data}, status=status.HTTP_200_OK)
 
 @api_view(["GET"])

@@ -22,6 +22,7 @@ import Link from "next/link";
  */
 
 interface Bridge {
+	location_json: any;
   id: number;
   name: string;
   location: string;
@@ -75,9 +76,20 @@ export default function ListBridge() {
 										<div className="mt-1 text-gray-700">
 											Traffic Load: {bridge.traffic_load}
 										</div>
-										<div className="mt-1 text-gray-700">
-											Location:  {bridge.location}
-										</div>
+										{bridge.location_json ? (
+                        <>
+                            <div className="mt-1 text-gray-700">
+                                Latitude: {JSON.parse(bridge.location_json).coordinates[1]}
+                            </div>
+                            <div className="mt-1 text-gray-700">
+                                Longitude: {JSON.parse(bridge.location_json).coordinates[0]}
+                            </div>
+                        </>
+                    ) : (
+                        <div className="mt-1 text-gray-700">
+                            Location not available
+                        </div>
+                    )}
 								</div>
 								</Link>
 							</li>
