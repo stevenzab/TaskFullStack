@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'bridge',
     'corsheaders',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

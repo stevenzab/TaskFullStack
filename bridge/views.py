@@ -14,13 +14,13 @@ from rest_framework import status
 def bridge_list(request):
     bridge = Bridges.objects.all()
     serializer = BridgeSerializer(bridge, many=True)
-    return JsonResponse({'bridge': serializer.data}, safe=False)
+    return JsonResponse({'bridge': serializer.data}, status=status.HTTP_200_OK)
 
 @api_view(["GET"])
 def bridge_details(request, id):
     bridge = Bridges.objects.get(pk=id)
     serialize = BridgeSerializer(bridge)
-    return Response(serialize.data)
+    return Response(serialize.data, status=status.HTTP_200_OK)
 
 @api_view(["PUT"])
 def update_bridge(request, id):
@@ -28,7 +28,7 @@ def update_bridge(request, id):
     serialize = BridgeSerializer(bridge, data=request.data)
     if serialize.is_valid():
         serialize.save()
-        return Response(serialize.data)
+        return Response(serialize.data, status=status.HTTP_200_OK)
     return Response(serialize.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(["POST"])
@@ -36,7 +36,7 @@ def create_bridge(request):
     serialize = BridgeSerializer(data=request.data)
     if serialize.is_valid():
         serialize.save()
-        return Response(serialize.data, status.HTTP_201_CREATED)
+        return Response(serialize.data, status.HTTP_200_OK)
     return Response(serialize.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(["DELETE"])

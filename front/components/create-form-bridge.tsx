@@ -1,7 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function CreateFormBridge() {
+
+	const router = useRouter()
 
   const [formData, setFormData] = useState({
     name: '',
@@ -32,8 +35,8 @@ export default function CreateFormBridge() {
             body: JSON.stringify(formData),
         })
 
-      if (response.status === 201) {
-        alert('Bridge created successfully');
+      if (response.status === 200) {
+        router.push('/');
         setFormData({
           name: '',
           location: '',
