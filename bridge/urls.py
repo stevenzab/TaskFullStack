@@ -18,9 +18,9 @@ from django.urls import path
 from bridge import views
 
 urlpatterns = [
-    path('', views.bridge_list),
-    path('<int:id>/', views.bridge_details),
-    path('update/<int:id>/', views.update_bridge),
-    path('create/', views.create_bridge),
-    path('delete/<int:id>/', views.delete_bridge),
+    path('', views.bridge_list, name='bridge_list'),
+    path('<int:id>/', views.bridge_details, name='bridge_details'),
+    path('update/<int:id>/', views.update_bridge, name='update_bridge'),
+    path('create/', views.create_bridge, name='create_bridge'),
+    path('delete/<int:id>/', views.delete_bridge, name='delete_bridge'),
 ]
