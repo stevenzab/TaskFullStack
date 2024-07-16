@@ -1,0 +1,16 @@
+{
+    "entryPoints": [
+        "components/*.tsx"
+    ],
+    "out": "docs",
+    "tsconfig": "tsconfig.json",
+    "exclude": [
+        "**/node_modules/**/*"
+    ],
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "includeVersion": true,
+    "readme": "none",
+    "name": "Exo",
+    "theme": "default"
+}

@@ -2,6 +2,25 @@ import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
+/**
+ * CreateFormBridge Component
+ *
+ * @remarks
+ * React component to fill a form to create a bridge data.
+ * fill a form then create it.
+ *
+ * @component
+ * @returns {JSX.Element} A bridge that has been created using a POST API.
+ * @example
+ * ```tsx
+ * import CreateFormBridge from '@/components/CreateFormBridge';
+ *
+ * const MyBridgeDetailPage = () => {
+ *   return <CreateFormBridge />;
+ * };
+ * ```
+ */
+
 export default function CreateFormBridge() {
 
 	const router = useRouter()
@@ -16,14 +35,14 @@ export default function CreateFormBridge() {
 
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
@@ -46,12 +65,12 @@ export default function CreateFormBridge() {
         });
       }
     } catch (error) {
-      if (error.response && error.response.status === 400) {
-        setErrors(error.response.data);
-      } else {
-        console.error('Error creating bridge:', error);
-      }
-    }
+			if (error instanceof Error) {
+				console.error('Error creating bridge:', error.message);
+			} else {
+				console.error('An unexpected error occurred:', error);
+			}
+		}
   };
 
     return(

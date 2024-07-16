@@ -2,11 +2,37 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
 
+/**
+ * ListBridge Component
+ *
+ * @remarks
+ * React component to display a list of bridges. 
+ * Fetches bridge data from an API and displays each bridge's details.
+ *
+ * @component
+ * @returns {JSX.Element} Get all the bridge.
+ * @example
+ * ```tsx
+ * import ListBridge from '@/components/ListBridge';
+ *
+ * const MyBridgeListPage = () => {
+ *   return <ListBridge />;
+ * };
+ * ```
+ */
+
+interface Bridge {
+  id: number;
+  name: string;
+  location: string;
+  inspection_date: string;
+  status: string;
+  traffic_load: number;
+}
 
 export default function ListBridge() {
 
-	const [bridges, setBridges] = useState([]);
-
+	const [bridges, setBridges] = useState<Bridge[]>([]);
 
   useEffect(() => {
     const fetchBridges = async () => {

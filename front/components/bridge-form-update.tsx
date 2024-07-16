@@ -2,6 +2,27 @@ import React from 'react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
+/**
+ * 
+ * BridgeForm Components
+ * 
+ * @remarks
+ * React component for updating bridge details.
+ * Allows editing bridge information such as name, location, inspection date, status, and traffic load.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered BridgeForm component.
+ * @example
+ * ```tsx
+ * import BridgeForm from '@/components/BridgeForm';
+ *
+ * const MyBridgeForm = ({ id }) => {
+ *   return <BridgeForm id={id} />;
+ * };
+ * ```
+ */
+
+
 interface BridgeFormProps {
     id: number;
   }
@@ -12,7 +33,6 @@ const BridgeForm = ({ id }: BridgeFormProps) => {
 
     const [errors, setErrors] = useState({});
 
-
     const [bridge, setBridge] = useState({
         name: '',
         location: '',
@@ -21,14 +41,14 @@ const BridgeForm = ({ id }: BridgeFormProps) => {
         traffic_load: '',
       });
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setBridge({
           ...bridge,
           [e.target.name]: e.target.value
         });
       };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     
         try {

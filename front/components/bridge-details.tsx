@@ -4,6 +4,25 @@ import Cross from '../assets/cross.svg'
 import Image from 'next/image';
 import BridgeForm from './bridge-form-update';
 
+/**
+ * BridgeDetail Component
+ *
+ * @remarks
+ * React component for displaying and managing details of a bridge.
+ * Allows viewing bridge details, updating, and deleting.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered BridgeDetail component.
+ * @example
+ * ```tsx
+ * import BridgeDetail from '@/components/BridgeDetail';
+ *
+ * const MyBridgeDetailPage = () => {
+ *   return <BridgeDetail />;
+ * };
+ * ```
+ */
+
 interface RouterQuery {
   id: number
 }
