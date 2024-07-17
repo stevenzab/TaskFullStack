@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect'; // Ensures that Jest DOM assertions are available
+import '@testing-library/jest-dom/extend-expect';
 import BridgeList from '../pages/index';
 
 // describe('BridgeList Component', () => {
