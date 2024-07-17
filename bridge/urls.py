@@ -23,4 +23,6 @@ urlpatterns = [
     path('update/<int:id>/', views.update_bridge, name='update_bridge'),
     path('create/', views.create_bridge, name='create_bridge'),
     path('delete/<int:id>/', views.delete_bridge, name='delete_bridge'),
+    path('api/bridge-status-distribution/', views.bridge_status_distribution, name='bridge_status_distribution'),
+
 ]

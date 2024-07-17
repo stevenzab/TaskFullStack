@@ -27,7 +27,8 @@ export default function CreateFormBridge() {
 
   const [formData, setFormData] = useState({
     name: '',
-    location: '',
+    latitude: '',
+	longitude: '',
     inspection_date: '',
     status: '',
     traffic_load: ''
@@ -58,7 +59,8 @@ export default function CreateFormBridge() {
         router.push('/');
         setFormData({
           name: '',
-          location: '',
+          latitude: '',
+		  longitude: '',
           inspection_date: '',
           status: '',
           traffic_load: ''
@@ -87,11 +89,21 @@ export default function CreateFormBridge() {
 						/>
 					</div>
 					<div className="mb-4">
-						<label className="block text-gray-700">Location</label>
+						<label className="block text-gray-700">latitude</label>
 						<input
 							type="text"
-							name="location"
-							value={formData.location}
+							name="latitude"
+							value={formData.latitude}
+							onChange={handleChange}
+							className="w-full px-4 py-2 border rounded-lg text-black"
+						/>
+					</div>
+					<div className="mb-4">
+						<label className="block text-gray-700">longitude</label>
+						<input
+							type="text"
+							name="longitude"
+							value={formData.longitude}
 							onChange={handleChange}
 							className="w-full px-4 py-2 border rounded-lg text-black"
 						/>
