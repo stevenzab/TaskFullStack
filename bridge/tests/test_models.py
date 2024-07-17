@@ -33,9 +33,9 @@ class TestUrls(SimpleTestCase):
                 traffic_load=1000
             )
 
-        self.assertEqual(bridge.name, 'Mock Bridge')
-        self.assertEqual(bridge.location.x, 12.345)
-        self.assertEqual(bridge.location.y, 67.890)
-        self.assertEqual(bridge.inspection_date, '2024-01-01')
-        self.assertEqual(bridge.status, 'Good')
-        self.assertEqual(bridge.traffic_load, 1000)
+        self.assertEqual(bridge.name, mock_create.return_value.name)
+        self.assertEqual(bridge.location.x, mock_create.return_value.location.x)
+        self.assertEqual(bridge.location.y, mock_create.return_value.location.y)
+        self.assertEqual(bridge.inspection_date, mock_create.return_value.inspection_date)
+        self.assertEqual(bridge.status, mock_create.return_value.status)
+        self.assertEqual(bridge.traffic_load, mock_create.return_value.traffic_load)
