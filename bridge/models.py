@@ -26,7 +26,6 @@ class BridgeInput(serializers.Serializer):
     def create(self, validated_data):
         latitude = validated_data.pop('latitude')
         longitude = validated_data.pop('longitude')
-
         location = Point(longitude, latitude)
 
         bridge = Bridges.objects.create(location=location, **validated_data)

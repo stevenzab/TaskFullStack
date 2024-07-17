@@ -1,6 +1,14 @@
 
 import ListBridge from '@/components/list-bridge';
 
+/**
+ * BridgeList component is a component that renders the ListBridge component.
+ * 
+ * This component is used to display a list of bridge.
+ * 
+ * @returns {JSX.Element} The rendered `ListBridge` component wrapped in a React Fragment.
+ */
+
 const BridgeList = () => {
   
   return (

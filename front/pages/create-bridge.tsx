@@ -1,5 +1,13 @@
 import CreateFormBridge from "@/components/create-form-bridge";
 
+/**
+ * CreateBridge component is a component that renders the CreateFormBridge component.
+ * 
+ * This component is used to display and create a form in the application.
+ * 
+ * @returns {JSX.Element} The rendered `CreateFormBridge` component wrapped in a React Fragment.
+ */
+
 export default function CreateBridge() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">

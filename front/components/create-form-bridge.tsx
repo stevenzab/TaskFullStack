@@ -34,8 +34,6 @@ export default function CreateFormBridge() {
     traffic_load: ''
   });
 
-  const [errors, setErrors] = useState({});
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,

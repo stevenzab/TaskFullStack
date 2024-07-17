@@ -1,13 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
+
+/**
+ * BridgeForm Component
+ *
+ * @remarks
+ * React component for displaying and managing details of a bridge.
+ * Allows viewing bridge details, updating, and deleting.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered BridgeForm component.
+ * @example
+ * ```tsx
+ * import BridgeForm from '@/components/BridgeForm';
+ *
+ * interface RouterQuery {
+  	id: number
+	}
+ * const MyBridgeDetailPage = () => {
+ *   return <BridgeForm  id={id}/>;
+ * };
+ * ```
+ */
+
 interface BridgeFormProps {
     id: number;
 }
 
 const BridgeForm = ({ id }: BridgeFormProps) => {
     const router = useRouter();
-    const [errors, setErrors] = useState({});
     const [bridge, setBridge] = useState({
         name: '',
         latitude: '',
@@ -36,12 +58,8 @@ const BridgeForm = ({ id }: BridgeFormProps) => {
                 body: JSON.stringify(bridge),
             });
 
-            if (response.status === 200) {
+            if (response.status === 200)
                 router.push('/');
-            } else if (response.status === 400) {
-                const errorData = await response.json();
-                setErrors(errorData);
-            }
         } catch (error) {
             console.error('Error updating bridge:', error);
         }
@@ -62,9 +80,6 @@ const BridgeForm = ({ id }: BridgeFormProps) => {
                         status: data.status,
                         traffic_load: data.traffic_load,
                     });
-                } else if (response.status === 400) {
-                    const errorData = await response.json();
-                    setErrors(errorData);
                 }
             } catch (error) {
                 console.error('Error fetching bridge details:', error);
