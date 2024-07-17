@@ -39,7 +39,7 @@ const BridgeStatusPieChart = () => {
 						<PieChart width={400} height={400}>
 								<Pie
 										data={data}
-										cx={200}
+										cx={210}
 										cy={200}
 										labelLine={false}
 										label={({ status, percentage }) => `${status}: ${percentage.toFixed(1)}%`}
