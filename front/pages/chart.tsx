@@ -30,9 +30,11 @@ const BridgeStatusPieChart = () => {
 
     return (
         <div className='bg-white flex flex-col items-center justify-center'>
-					<h1 className='text-black p-5'>
-						Pie CHART
-					</h1>
+					<div className='mt-5'>
+						<h1 className="text-3xl font-bold text-center text-black">
+							Bridges List
+						</h1>
+					</div>
 					<div className=''>
 						<PieChart width={400} height={400}>
 								<Pie
